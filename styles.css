@@ -1,0 +1,491 @@
+
+:root {
+    --body-bg: rgb(239, 239, 239);
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Zilla Slab", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  /*
+  .roboto-regular {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .roboto-bold {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  .zilla-slab-regular {
+    font-family: "Zilla Slab", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .zilla-slab-semibold {
+    font-family: "Zilla Slab", serif;
+    font-weight: 600;
+    font-style: normal;
+  }
+  */
+  
+  body {
+    background-color: var(--body-bg);
+  }
+  
+  .header-inner {
+    display: grid;
+    grid-template-columns: 3fr 4fr;
+    grid-template-rows: 100%;
+    height: auto;
+  }
+  
+  img {
+    display: block;
+    max-width: 100%;
+  }
+  
+  figcaption {
+    top: 0;
+    color: white;
+    position: absolute;
+    text-shadow: 1px 1px 1px rgba(1, 0, 0, 1);
+    font-size: 4rem;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+  }
+  
+  .container {
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 0 60px;
+  }
+  
+  header {
+    position: relative;
+    padding-bottom: 50px;
+  }
+  
+  header::before {
+    /* https://edavis.github.io/2018/02/04/create-an-angled-background-in-css/ */
+    /* background-image: linear-gradient(165deg, #7cb8f1 65%, #ffffff calc(65% + 1px)); */
+  
+    /* background: linear-gradient(166deg, transparent 70%, #fff calc(70% + 1px)),
+      linear-gradient(90deg, #031085 10%, #ed8080 calc(80% + 1px)); */
+    background: linear-gradient(170deg,
+        transparent 59%,
+        var(--body-bg) calc(59% + 1px)),
+      linear-gradient(161deg, #7cb8f1 10%, #ed8080 calc(80% + 1px));
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+  
+  .figure-wrapper {
+    padding: 60px 0 60px 0;
+  }
+  
+  .figure-wrapper .img-wrapper {
+    position: relative;
+    height: 100%;
+  }
+  
+  .figure-wrapper .img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: left;
+    box-shadow: 0px 9px 20px -10px rgba(66, 68, 90, 1);
+  }
+  
+  .about {
+    background: linear-gradient(155deg, #9bceff 22%, #ffd2d2 calc(90% + 1px));
+    color: black;
+    box-shadow: 0px 0px 5px #959595;
+    margin: 120px 0;
+    padding: 60px;
+    text-align: justify;
+  
+    display: flex;
+    flex-direction: column;
+    gap: 45px;
+  
+    /* https://css-tricks.com/almanac/properties/o/overflow-wrap/ */
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+  }
+  
+  p {
+    font-size: 1.25rem;
+  }
+  
+  h1 {
+    font-size: 4rem;
+  }
+  
+  h2 {
+    font-size: 3.3rem;
+  }
+  
+  h3 {
+    font-size: 1.5rem;
+  }
+  
+  .copy {
+    font-size: 1.6rem;
+    line-height: 1.4;
+    color: #4f4f4f;
+  }
+  
+  .about .icons {
+    margin-top: auto;
+    display: flex;
+    justify-content: end;
+    gap: 15px;
+  }
+  
+  .about .icons img {
+    width: 48px;
+  }
+  
+  main {
+    background-image: linear-gradient(180deg, #ed8080, var(--body-bg));
+  }
+  
+  main h2.container {
+    max-width: 1500px;
+    padding-block-start: 50px;
+    padding-block-end: 15px;
+  }
+  
+  .projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+    grid-auto-rows: min-content;
+    gap: 50px 40px;
+    max-width: 1500px;
+    padding-bottom: 150px;
+  }
+  
+  .projects .icons img {
+    width: 25px;
+  }
+  
+  .projects .icons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    flex: 1
+  }
+  
+  .projects h3 {
+    flex: 2;
+  }
+  
+  .project-name-links {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .projects .icons a {
+    flex-shrink: 0;
+  }
+  
+  
+  .project {
+    box-shadow: 0px 10px 17px -1px #cdcdcd;
+    background: white;
+  }
+  
+  .project .img-wrapper {
+    height: 200px;
+  }
+  
+  .project .img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .card-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 0.8rem 1.5rem 1.5rem 1.5rem;
+    background-color: white;
+  }
+  
+  .description {
+    color: #4f4f4f;
+    hyphens: auto;
+  }
+  
+  footer {
+    /* margin-top: 150px; */
+    padding: 60px 0;
+    color: #f5f5f5;
+    text-shadow: 1px 1px 1px rgba(1, 0, 0, 1);
+    /* https://css-generators.com/wavy-shapes/ */
+    background-image: linear-gradient(45deg, #654ea3, #eaafc8);
+    --mask: radial-gradient(35.05px at 50% 49.45px, #000 99%, #0000 101%) calc(50% - 46px) 0/92px 100%,
+      radial-gradient(35.05px at 50% -26.45px, #0000 99%, #000 101%) 50% 23px/92px 100% repeat-x;
+    -webkit-mask: var(--mask);
+    mask: var(--mask);
+  }
+  
+  footer a {
+    color: lightblue;
+  }
+  
+  footer a:hover {
+    text-decoration: underline;
+  }
+  
+  footer p {
+    font-size: 1.5rem;
+  }
+  
+  footer p,
+  footer a,
+  .description {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  footer .info {
+    word-break: break-all;
+  }
+  
+  .footer-inner {
+    display: grid;
+    grid-template-columns: 3fr 4fr;
+    max-width: 1500px;
+  }
+  
+  .contact {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .contact p {
+    padding-right: 3rem;
+  }
+  
+  .contact .info {
+    display: flex;
+    gap: 9px;
+    align-items: center;
+  }
+  
+  .contact .info:nth-of-type(1) {
+    margin-bottom: 6px;
+  }
+  
+  .contact .info img {
+    width: 25px;
+    filter: brightness(0) invert(1);
+  }
+  
+  .contact .icons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .contact .icons img {
+    width: 48px;
+  }
+  
+  .icons a img {
+    transition: all 0.8s;
+  }
+  
+  .icons a:hover img,
+  .icons a:focus img {
+    background: lightblue;
+    transform: rotate(1turn) scale(1.3);
+    transition: all 0.5s;
+    border-radius: 5px;
+  }
+  
+  @media screen and (min-height: 790px) and (max-height: 1400px) {
+    .header-inner {
+      height: 100vh;
+    }
+  }
+  
+  @media screen and (min-height: 1401px) {
+    .header-inner {
+      height: 1400px;
+    }
+  }
+  
+  @media screen and (max-width: 1200px) {
+    header {
+      padding-bottom: 0;
+    }
+  
+    .projects {
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+  
+  
+    header::before {
+      background: linear-gradient(170deg,
+          transparent 59%,
+          var(--body-bg) calc(59% + 1px)),
+        linear-gradient(161deg, #ed8080 10%, #7cb8f1 calc(80% + 1px));
+    }
+  
+    .container {
+      padding-inline: 0;
+      width: 85vw;
+    }
+  
+    body {
+      overflow-x: hidden;
+    }
+  
+    .header-inner {
+      height: auto;
+      display: block;
+      padding-block: 60px;
+    }
+  
+    .figure-wrapper {
+      width: 45vw;
+      float: left;
+      padding: 0;
+      transform: translate(-4vw, -0.5rem);
+      shape-outside: inset(10px 18px 10px 10px);
+    }
+  
+    .figure-wrapper figcaption {
+      width: 100vw;
+      transform: translateX(39vw);
+      text-align: left;
+      font-size: 6rem;
+    }
+  
+    .about {
+      display: block;
+      margin: 7rem 0 0 0;
+    }
+  
+    .about h1 {
+      text-align: center;
+      font-size: 3.5rem;
+    }
+  
+    .about .icons {
+      padding-top: 1.5rem;
+    }
+  
+    .footer-inner {
+      grid-template-columns: 4fr 3fr;
+    }
+  }
+  
+  @media screen and (max-width: 760px) {
+    header::before {
+      background: linear-gradient(151deg,
+          transparent 100vw,
+          var(--body-bg) calc(100vw + 1px)),
+        linear-gradient(161deg, #ed8080 10%, #7cb8f1 calc(80% + 1px));
+    }
+  
+    .figure-wrapper {
+      width: 100%;
+      float: none;
+      padding: 0;
+      transform: none;
+      shape-outside: none;
+    }
+  
+    .figure-wrapper figcaption {
+      width: 100%;
+      transform: none;
+      text-align: center;
+      top: initial;
+      bottom: 0;
+    }
+  
+    .about {
+      margin: 0;
+      background: transparent;
+      box-shadow: none;
+      padding: 0;
+      display: flex;
+      gap: 1rem;
+      text-align: left;
+    }
+  
+    .about h1 {
+      text-align: center;
+      font-size: 3.5rem;
+      padding: 3rem 0 0 0;
+    }
+  
+    .about .icons {
+      display: flex;
+      justify-content: center;
+    }
+  
+    .about .icons img {
+      width: 48px;
+    }
+  
+    footer {
+      padding: 0;
+    }
+  
+    .footer-inner.container {
+      display: block;
+      width: 100%;
+    }
+  
+    .footer-inner .contact {
+      width: 85vw;
+      margin: 0 auto;
+      padding: 3rem 0 2rem 0;
+    }
+  
+    .footer-inner figure {
+      width: 100%;
+    }
+  
+  
+    .footer-inner figure img {
+        width: 100%;
+      /* max-height: 700px; */
+      /* object-fit: cover; */
+      /* object-position: top; */
+    }
+  
+    .footer-inner .icons {
+      justify-content: center;
+    }
+  
+    .contact h2 {
+      text-align: center;
+    }
+  }
+  
